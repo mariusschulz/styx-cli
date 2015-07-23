@@ -44,8 +44,8 @@ function processInputFile(args) {
 
         const ast = esprima.parse(fileContents);
         const flowProgram = Styx.parse(ast);
-        const json = Styx.exportProgram(flowProgram, "json");
+        const exportedProgram = Styx.exportProgram(flowProgram, args.format);
 
-        console.log(json);
+        console.log(exportedProgram);
     });
 }
