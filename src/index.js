@@ -1,16 +1,18 @@
-const esprima = require("esprima");
-const Styx = require("../../styx/dist/transpiled/styx");
-const args = require("yargs").argv;
+import esprima from "esprima";
+import yargs from "yargs";
+import * as Styx from "../../styx/dist/transpiled/styx";
 
-const help = require("./help");
+import help from "./help";
 
 // ============================================================================
+
+const args = yargs.argv;
 
 if (args.help) {
     help.show();
 } else {
-    var ast = esprima.parse("var x = 3;");
-    var flowProgram = Styx.parse(ast);
-    var json = Styx.exportProgram(flowProgram, "json");
+    const ast = esprima.parse("var x = 3;");
+    const flowProgram = Styx.parse(ast);
+    const json = Styx.exportProgram(flowProgram, "json");
     console.log(json);
 }
