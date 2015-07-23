@@ -32,6 +32,10 @@ function runStyx(args) {
         return;
     }
 
+    processInputFile(args);
+}
+
+function processInputFile(args) {
     fs.readFile(args.input, "utf-8", function(err, fileContents) {
         if (err) {
             console.log(chalk.red.bold(`Couldn't read input file "${err.path}"`));
@@ -41,6 +45,7 @@ function runStyx(args) {
         const ast = esprima.parse(fileContents);
         const flowProgram = Styx.parse(ast);
         const json = Styx.exportProgram(flowProgram, "json");
-        //console.log(json);
+
+        console.log(json);
     });
 }
