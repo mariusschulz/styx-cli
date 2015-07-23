@@ -44,7 +44,21 @@ function processInputFile(args) {
         const flowProgram = Styx.parse(ast);
         const exportedProgram = Styx.exportProgram(flowProgram, args.format);
 
-        console.log(exportedProgram);
+        if (args.output) {
+            writeExportToFile(exportedProgram, args);
+        } else {
+            console.log(exportedProgram);
+        }
+    });
+}
+
+function writeExportToFile(exportedProgram, args) {
+    fs.writeFile(args.output, exportedProgram, function(err) {
+        if (err) {
+            exitWithError(err);
+        }
+
+        console.log(chalk.bold.green("Export successful."));
     });
 }
 
