@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import { supportedOutputFormats } from "./argValidator";
 
 export default { show };
 
@@ -13,19 +14,21 @@ const ASCII_ART_HEADER =
              |___/
 `;
 
-const USAGE = `  styx [-i ${highlight("<file>")}] [-o ${highlight("<file>")}] [-f ${highlight("<format>")}]
+const usage = `  styx [-i ${highlight("<file>")}] [-o ${highlight("<file>")}] [-f ${highlight("<format>")}]
        [--version] [--help]`;
 
-const ARG_EXPLANATIONS = `
+const formattedOutputFormats = supportedOutputFormats.map(format => highlight(format)).join(" or ");
+
+const argExplanations = `
     -i, --input  ${highlight("<file>")}      Path to the input file
     -o, --output ${highlight("<file>")}      Path to the output file
-    -f, --format ${highlight("<format>")}    The desired output format: ${highlight("json")} or ${highlight("dot")}
+    -f, --format ${highlight("<format>")}    The desired output format: ${formattedOutputFormats}
 
     --version                Displays the current version
     --help                   Displays this help text`;
 
 function show() {
     console.log(highlight(ASCII_ART_HEADER));
-    console.log(USAGE);
-    console.log(ARG_EXPLANATIONS);
+    console.log(usage);
+    console.log(argExplanations);
 }
