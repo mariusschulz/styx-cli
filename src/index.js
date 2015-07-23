@@ -5,7 +5,7 @@ import * as Styx from "../../styx/dist/transpiled/styx";
 
 import fs from "fs";
 
-import { validateCommandLineArg } from "./argValidator";
+import { validateCommandLineArgs } from "./argValidator";
 import help from "./help";
 
 // ============================================================================
@@ -24,7 +24,7 @@ function runStyx(args) {
         return;
     }
 
-    const argumentErrors = validateCommandLineArg(args);
+    const argumentErrors = validateCommandLineArgs(args);
 
     if (argumentErrors.length) {
         const errorList = argumentErrors.map(error => `  - ${error}`).join("\n");

@@ -1,8 +1,8 @@
 const supportedOutputFormats = ["json", "dot"];
 
-export { validateCommandLineArg, supportedOutputFormats };
+export { validateCommandLineArgs, supportedOutputFormats };
 
-function validateCommandLineArg(args) {
+function validateCommandLineArgs(args) {
     const errors = [];
 
     if (!args.input) {
