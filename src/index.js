@@ -37,7 +37,7 @@ function runStyx(args) {
 function processInputFile(args) {
     fs.readFile(args.input, "utf-8", function(err, fileContents) {
         if (err) {
-            displayError(`Couldn't read input file "${err.path}"`);
+            displayError(`Couldn't read input file "${err.path}".`);
             return;
         }
 
