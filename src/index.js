@@ -6,7 +6,11 @@ import help from "./help";
 
 // ============================================================================
 
-const args = yargs.argv;
+const args = yargs
+    .alias("i", "input")
+    .alias("o", "output")
+    .alias("f", "format")
+    .argv;
 
 if (args.help) {
     help.show();

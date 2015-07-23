@@ -13,11 +13,16 @@ const ASCII_ART_HEADER =
              |___/
 `;
 
-const USAGE = `  styx ${highlight("<file>")} [--format ${highlight("<format>")}] [--help]`;
+const USAGE = `  styx [-i ${highlight("<file>")}] [-o ${highlight("<file>")}] [-f ${highlight("<format>")}]
+       [--version] [--help]`;
 
 const ARG_EXPLANATIONS = `
-    --format ${highlight("<format>")}    Specifies an output format: ${highlight("json")}, ${highlight("dot")}
-    --help               Displays this help text`;
+    -i, --input  ${highlight("<file>")}      Path to the input file
+    -o, --output ${highlight("<file>")}      Path to the output file
+    -f, --format ${highlight("<format>")}    The desired output format: ${highlight("json")} or ${highlight("dot")}
+
+    --version                Displays the current version
+    --help                   Displays this help text`;
 
 function show() {
     console.log(highlight(ASCII_ART_HEADER));
