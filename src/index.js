@@ -27,8 +27,7 @@ function runStyx(args) {
     const argumentErrors = validateCommandLineArgs(args);
 
     if (argumentErrors.length) {
-        const errorList = argumentErrors.map(error => `  - ${error}`).join("\n");
-        console.log(chalk.red.bold(errorList));
+        argumentErrors.forEach(displayError);
         return;
     }
 
@@ -38,7 +37,7 @@ function runStyx(args) {
 function processInputFile(args) {
     fs.readFile(args.input, "utf-8", function(err, fileContents) {
         if (err) {
-            console.log(chalk.red.bold(`Couldn't read input file "${err.path}"`));
+            displayError(`Couldn't read input file "${err.path}"`);
             return;
         }
 
@@ -48,4 +47,8 @@ function processInputFile(args) {
 
         console.log(exportedProgram);
     });
+}
+
+function displayError(message) {
+    console.log(chalk.red.bold(message));
 }
