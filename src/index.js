@@ -27,8 +27,8 @@ function runStyx(args) {
     const argumentErrors = validateCommandLineArgs(args);
 
     if (argumentErrors.length) {
-        argumentErrors.forEach(displayError);
-        return;
+        const errorMessage = argumentErrors.join("\n");
+        exitWithError(errorMessage);
     }
 
     processInputFile(args);
@@ -37,8 +37,7 @@ function runStyx(args) {
 function processInputFile(args) {
     fs.readFile(args.input, "utf-8", function(err, fileContents) {
         if (err) {
-            displayError(`Couldn't read input file "${err.path}".`);
-            return;
+            exitWithError(`Couldn't read input file "${err.path}".`);
         }
 
         const ast = esprima.parse(fileContents);
@@ -49,6 +48,11 @@ function processInputFile(args) {
     });
 }
 
-function displayError(message) {
-    console.log(chalk.red.bold(message));
+function displayError(errorMessage) {
+    console.log(chalk.red.bold(errorMessage));
+}
+
+function exitWithError(errorMessage) {
+    displayError(errorMessage);
+    process.exit(1);
 }
