@@ -8,8 +8,6 @@ import fs from "fs";
 import { validateCommandLineArgs } from "./argValidator";
 import help from "./help";
 
-// ============================================================================
-
 const commandLineArgs = yargs
     .alias("i", "input")
     .alias("o", "output")
