@@ -26,7 +26,7 @@ function runStyx(args) {
 
     const argumentErrors = validateCommandLineArgs(args);
 
-    if (argumentErrors.length) {
+    if (argumentErrors.length > 0) {
         const errorMessage = argumentErrors.join("\n");
         exitWithError(errorMessage);
     }
