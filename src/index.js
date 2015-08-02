@@ -53,7 +53,8 @@ function processInputFile(args) {
 function exportAsTargetFormat(flowProgram, args) {
     switch (args.format.trim().toLowerCase()) {
         case "json":
-            return Styx.exportAsJson(flowProgram);
+            let pretty = !args.minified;
+            return Styx.exportAsJson(flowProgram, { pretty });
 
         case "dot":
             let flowGraph = findFlowGraphForId(flowProgram, 0);
