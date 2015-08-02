@@ -15,7 +15,7 @@ const ASCII_ART_HEADER =
 `;
 
 const usage = `  styx [-i ${highlight("<file>")}] [-o ${highlight("<file>")}] [-f ${highlight("<format>")}]
-       [--version] [--help]`;
+       [--minified-json] [--version] [--help]`;
 
 const formattedOutputFormats = supportedOutputFormats.map(format => highlight(format)).join(" or ");
 
@@ -23,6 +23,8 @@ const argExplanations = `
     -i, --input  ${highlight("<file>")}      Path to the input file
     -o, --output ${highlight("<file>")}      Path to the output file
     -f, --format ${highlight("<format>")}    The desired output format: ${formattedOutputFormats}
+
+    --minified-json          Minifies the serialized JSON string
 
     --version                Displays the current version
     --help                   Displays this help text`;
