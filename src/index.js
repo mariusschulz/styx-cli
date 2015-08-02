@@ -40,7 +40,7 @@ function processInputFile(args) {
 
         const ast = esprima.parse(fileContents);
         const flowProgram = Styx.parse(ast);
-        const exportedProgram = Styx.exportProgram(flowProgram, args.format);
+        const exportedProgram = exportAsTargetFormat(flowProgram, args);
 
         if (args.output) {
             writeExportToFile(exportedProgram, args);
@@ -48,6 +48,34 @@ function processInputFile(args) {
             console.log(exportedProgram);
         }
     });
+}
+
+function exportAsTargetFormat(flowProgram, args) {
+    switch (args.format.trim().toLowerCase()) {
+        case "json":
+            return Styx.exportJson(flowProgram);
+
+        case "dot":
+            let flowGraph = findFlowGraphForId(flowProgram, 0);
+            return Styx.exportDot(flowGraph);
+
+        default:
+            throw Error(`Encountered unsupported format "${args.format}"`);
+    }
+}
+
+function findFlowGraphForId(flowProgram, functionId) {
+    if (!functionId) {
+        return flowProgram.flowGraph;
+    }
+
+    for (let fun of flowProgram.functions) {
+        if (fun.id === functionId) {
+            return fun.flowGraph;
+        }
+    }
+
+    throw Error(`Couldn't find function with id ${functionId}`);
 }
 
 function writeExportToFile(exportedProgram, args) {
