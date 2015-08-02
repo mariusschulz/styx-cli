@@ -15,7 +15,7 @@ const ASCII_ART_HEADER =
 `;
 
 const usage = `  styx [-i ${highlight("<file>")}] [-o ${highlight("<file>")}] [-f ${highlight("<format>")}]
-       [--minified-json] [--version] [--help]`;
+       [--minified-json] [--help]`;
 
 const formattedOutputFormats = supportedOutputFormats.map(format => highlight(format)).join(" or ");
 
@@ -26,7 +26,6 @@ const argExplanations = `
 
     --minified-json          Minifies the serialized JSON string
 
-    --version                Displays the current version
     --help                   Displays this help text`;
 
 function show() {
