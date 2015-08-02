@@ -53,11 +53,11 @@ function processInputFile(args) {
 function exportAsTargetFormat(flowProgram, args) {
     switch (args.format.trim().toLowerCase()) {
         case "json":
-            return Styx.exportJson(flowProgram);
+            return Styx.exportAsJson(flowProgram);
 
         case "dot":
             let flowGraph = findFlowGraphForId(flowProgram, 0);
-            return Styx.exportDot(flowGraph);
+            return Styx.exportAsDot(flowGraph);
 
         default:
             throw Error(`Encountered unsupported format "${args.format}"`);
