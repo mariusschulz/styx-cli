@@ -53,7 +53,7 @@ function processInputFile(args) {
 function exportAsTargetFormat(flowProgram, args) {
     switch (args.format.trim().toLowerCase()) {
         case "json":
-            let pretty = !args.minified;
+            let pretty = !args.minifyJson;
             return Styx.exportAsJson(flowProgram, { pretty });
 
         case "dot":
