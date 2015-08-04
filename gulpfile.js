@@ -3,14 +3,14 @@ var babel = require("gulp-babel");
 
 var builtDir = "./built"
 
-gulp.task("transpile", function() {
+gulp.task("babel", function() {
     return gulp.src("src/**.js")
         .pipe(babel())
         .pipe(gulp.dest(builtDir));
 });
 
-gulp.task("watch", function () {
-    gulp.watch("src/**.js", ["transpile"]);
+gulp.task("babel-watch", function () {
+    gulp.watch("src/**.js", ["babel"]);
 });
 
-gulp.task("default", ["transpile", "watch"]);
+gulp.task("default", ["babel", "babel-watch"]);

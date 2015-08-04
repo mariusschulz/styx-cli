@@ -4,7 +4,8 @@
   "description": "Command line interface for Styx",
   "main": "built/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-watch": "gulp babel-watch"
   },
   "keywords": [
     "styx"
