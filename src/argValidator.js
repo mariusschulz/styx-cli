@@ -5,7 +5,7 @@ export { validateCommandLineArgs, supportedOutputFormats };
 function validateCommandLineArgs(args) {
     const errors = [];
 
-    if (!args.input) {
+    if (!args._[0]) {
         errors.push("Please specify an input file.");
     }
 

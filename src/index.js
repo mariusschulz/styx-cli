@@ -9,7 +9,6 @@ import { validateCommandLineArgs } from "./argValidator";
 import help from "./help";
 
 const commandLineArgs = yargs
-    .alias("i", "input")
     .alias("o", "output")
     .alias("f", "format")
     .argv;
@@ -33,7 +32,7 @@ function runStyx(args) {
 }
 
 function processInputFile(args) {
-    fs.readFile(args.input, "utf-8", function(err, fileContents) {
+    fs.readFile(args._[0], "utf-8", function(err, fileContents) {
         if (err) {
             exitWithError(`Couldn't read input file "${err.path}".`);
         }

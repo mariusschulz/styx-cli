@@ -14,13 +14,12 @@ const ASCII_ART_HEADER =
              |___/
 `;
 
-const usage = `  styx [-i ${highlight("<file>")}] [-o ${highlight("<file>")}] [-f ${highlight("<format>")}]
+const usage = `  styx [-o ${highlight("<file>")}] [-f ${highlight("<format>")}]
        [--minified-json] [--help]`;
 
 const formattedOutputFormats = supportedOutputFormats.map(format => highlight(format)).join(" or ");
 
 const argExplanations = `
-    -i, --input  ${highlight("<file>")}      Path to the input file
     -o, --output ${highlight("<file>")}      Path to the output file
     -f, --format ${highlight("<format>")}    The desired output format: ${formattedOutputFormats}
 
