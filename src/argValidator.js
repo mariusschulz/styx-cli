@@ -11,7 +11,7 @@ function validateCommandLineArgs(args) {
 
     const format = (args.format || "").trim().toLowerCase();
 
-    if (supportedOutputFormats.indexOf(format) === -1) {
+    if (format && supportedOutputFormats.indexOf(format) === -1) {
         const allowedFormats = supportedOutputFormats.map(format => `"${format}"`).join(" or ");
         errors.push(`Please specify an output format (either ${allowedFormats}).`);
     }
