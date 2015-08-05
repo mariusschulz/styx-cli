@@ -9,8 +9,8 @@ gulp.task("babel", function() {
         .pipe(gulp.dest(builtDir));
 });
 
-gulp.task("babel-watch", function () {
+gulp.task("babel-watch", ["babel"], function () {
     gulp.watch("src/**.js", ["babel"]);
 });
 
-gulp.task("default", ["babel", "babel-watch"]);
+gulp.task("default", ["babel-watch"]);
