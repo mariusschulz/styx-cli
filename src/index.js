@@ -71,7 +71,9 @@ function findFlowGraphForId(flowProgram, functionId) {
         return flowProgram.flowGraph;
     }
 
-    for (let fun of flowProgram.functions) {
+    for (let i = 0, length = flowProgram.functions.length; i < length; i++) {
+        let fun = flowProgram.functions[i];
+
         if (fun.id === functionId) {
             return fun.flowGraph;
         }
