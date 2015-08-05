@@ -12,9 +12,13 @@ function validateCommandLineArgs(args) {
     const format = (args.format || "").trim().toLowerCase();
 
     if (format && supportedOutputFormats.indexOf(format) === -1) {
-        const allowedFormats = supportedOutputFormats.map(format => `"${format}"`).join(" or ");
+        const allowedFormats = supportedOutputFormats.map(surroundWithQuotes).join(" or ");
         errors.push(`Please specify an output format (either ${allowedFormats}).`);
     }
 
     return errors;
+}
+
+function surroundWithQuotes(value) {
+    return `"${value}"`;
 }
