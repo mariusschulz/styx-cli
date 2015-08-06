@@ -97,3 +97,7 @@ function exitWithError(errorMessage) {
     console.error(chalk.bold.red(errorMessage));
     process.exit(1);
 }
+
+process.on("uncaughtException", function(e) {
+    exitWithError(e);
+})
