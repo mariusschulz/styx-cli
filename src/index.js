@@ -92,11 +92,7 @@ function writeExportToFile(exportedProgram, args) {
     });
 }
 
-function displayError(errorMessage) {
-    console.log(chalk.red.bold(errorMessage));
-}
-
 function exitWithError(errorMessage) {
-    displayError(errorMessage);
+    console.error(chalk.bold.red(errorMessage));
     process.exit(1);
 }
