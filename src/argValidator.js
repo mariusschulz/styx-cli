@@ -16,9 +16,9 @@ function validateCommandLineArgs(args) {
         errors.push(`Please specify an output format (either ${allowedFormats}).`);
     }
 
-    if (format === "dot") {
-        let graph = args.graph;
+    let graph = args.graph;
 
+    if (format === "dot" && typeof graph !== "undefined") {
         if (typeof graph !== "number" || graph < 0) {
             errors.push(`The "graph" argument must be a positive number.`);
         }
