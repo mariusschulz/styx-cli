@@ -11,6 +11,7 @@ import help from "./help";
 const commandLineArgs = yargs
     .alias("o", "output")
     .alias("f", "format")
+    .alias("g", "graph")
     .argv;
 
 runStyx(commandLineArgs);
@@ -58,7 +59,7 @@ function exportAsTargetFormat(flowProgram, args) {
             return Styx.exportAsJson(flowProgram, { pretty });
 
         case "dot":
-            let flowGraph = findFlowGraphForId(flowProgram, 0);
+            let flowGraph = findFlowGraphForId(flowProgram, args.graph);
             return Styx.exportAsDot(flowGraph);
 
         default:
