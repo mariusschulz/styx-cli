@@ -1,9 +1,9 @@
 {
   "name": "styx-cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Command line interface for Styx",
   "main": "./lib/index.js",
-  "files": ["lib/index.js"],
+  "files": ["lib/"],
   "repository": {
     "type": "git",
     "url": "https://github.com/mariusschulz/styx-cli.git"
