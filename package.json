@@ -1,15 +1,25 @@
 {
   "name": "styx-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Command line interface for Styx",
   "main": "built/index.js",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/mariusschulz/styx-cli.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel": "gulp babel",
     "babel-watch": "gulp babel-watch"
   },
   "keywords": [
-    "styx"
+    "styx",
+    "control",
+    "flow",
+    "graph",
+    "ast",
+    "estree",
+    "cli"
   ],
   "author": {
     "name": "Marius Schulz",
