@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import esprima from "esprima";
 import yargs from "yargs";
-import * as Styx from "../../styx/dist/transpiled/styx";
+import * as Styx from "styx";
 
 import fs from "fs";
 
