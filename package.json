@@ -1,14 +1,16 @@
 {
   "name": "styx-cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Command line interface for Styx",
-  "main": "built/index.js",
+  "main": "./lib/index.js",
+  "files": ["lib/index.js"],
   "repository": {
     "type": "git",
     "url": "https://github.com/mariusschulz/styx-cli.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run babel",
     "babel": "gulp babel",
     "babel-watch": "gulp babel-watch"
   },
