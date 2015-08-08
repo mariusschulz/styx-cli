@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import chalk from "chalk";
 import esprima from "esprima";
 import yargs from "yargs";
