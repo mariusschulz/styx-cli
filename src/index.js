@@ -61,24 +61,24 @@ function exportAsTargetFormat(flowProgram, args) {
             return Styx.exportAsJson(flowProgram, { pretty });
 
         case "dot":
-            let flowGraph = findFlowGraphForId(flowProgram, args.graph);
-            return Styx.exportAsDot(flowGraph);
+            let [flowGraph, name] = findFlowGraphAndNameForId(flowProgram, args.graph);
+            return Styx.exportAsDot(flowGraph, name);
 
         default:
             throw Error(`Encountered unsupported format "${args.format}"`);
     }
 }
 
-function findFlowGraphForId(flowProgram, functionId) {
+function findFlowGraphAndNameForId(flowProgram, functionId) {
     if (!functionId) {
-        return flowProgram.flowGraph;
+        return [flowProgram.flowGraph, "Main Program"];
     }
 
     for (let i = 0, length = flowProgram.functions.length; i < length; i++) {
         let fun = flowProgram.functions[i];
 
         if (fun.id === functionId) {
-            return fun.flowGraph;
+            return [fun.flowGraph, fun.name];
         }
     }
 
