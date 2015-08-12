@@ -11,9 +11,10 @@ import { validateCommandLineArgs } from "./argValidator";
 import help from "./help";
 
 const commandLineArgs = yargs
-    .alias("o", "output")
     .alias("f", "format")
     .alias("g", "graph")
+    .alias("m", "minified-json")
+    .alias("o", "output")
     .argv;
 
 runStyx(commandLineArgs);
