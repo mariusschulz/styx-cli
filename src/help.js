@@ -3,7 +3,7 @@ import { supportedOutputFormats } from "./argValidator";
 
 export default { show };
 
-const highlight = chalk.cyan;
+const highlight = chalk.green.bold;
 
 const ASCII_ART_HEADER =
 `   ____  _
