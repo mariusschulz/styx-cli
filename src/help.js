@@ -15,7 +15,15 @@ const ASCII_ART_HEADER =
              |___/
 `;
 
-const usage = `  styx [-f ${highlight("<format>")}] [-g ${highlight("<graph id>")}] [-o ${highlight("<file>")}] [-m] [--help]`;
+const usageCommands = [
+    "-f " + highlight("<format>"),
+    "-g " + highlight("<graph id>"),
+    "-o " + highlight("<file>"),
+    "-m",
+    "--help"
+];
+
+const usage = "  styx " + usageCommands.map(surroundWithBrackets).join(" ");
 
 const formattedOutputFormats = supportedOutputFormats
     .map(format => highlightSecondary(format))
@@ -33,4 +41,8 @@ function show() {
     console.log(highlight(ASCII_ART_HEADER));
     console.log(usage);
     console.log(argExplanations);
+}
+
+function surroundWithBrackets(value) {
+    return `[${value}]`;
 }
