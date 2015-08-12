@@ -3,7 +3,8 @@ import { supportedOutputFormats } from "./argValidator";
 
 export default { show };
 
-const highlight = chalk.green.bold;
+const highlight = chalk.bold.green;
+const highlightSecondary = chalk.bold.yellow;
 
 const ASCII_ART_HEADER =
 `   ____  _
@@ -18,15 +19,15 @@ const usage = `  styx [-f ${highlight("<format>")}] [-g ${highlight("<graph id>"
        [--minified-json] [--help]`;
 
 const formattedOutputFormats = supportedOutputFormats
-    .map(format => highlight(format))
+    .map(format => highlightSecondary(format))
     .join(" or ");
 
 const argExplanations = `
-    -f, --format ${highlight("<format>")}     Desired output format: ${formattedOutputFormats}
-    -g, --graph ${highlight("<graph id>")}    ID of the control flow graph to export
+    -f, --format ${highlight("<format>")}     Desired output format (${formattedOutputFormats})
+    -g, --graph ${highlight("<graph id>")}    ID of the control flow graph to export (${highlightSecondary("dot")}-only)
     -o, --output ${highlight("<file>")}       Path to the output file
 
-    --minified-json           Minifies the serialized JSON string
+    --minified-json           Minifies the serialized JSON string (${highlightSecondary("json")}-only)
 
     --help                    Displays this help text`;
 
