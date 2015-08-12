@@ -23,7 +23,7 @@ const usageCommands = [
     "--help"
 ];
 
-const usage = "  styx " + usageCommands.map(surroundWithBrackets).join(" ");
+const usage = "  $ styx " + usageCommands.map(surroundWithBrackets).join(" ");
 
 const formattedOutputFormats = supportedOutputFormats
     .map(format => highlightSecondary(format))
