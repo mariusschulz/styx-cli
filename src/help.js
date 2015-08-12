@@ -14,7 +14,7 @@ const ASCII_ART_HEADER =
              |___/
 `;
 
-const usage = `  styx [-o ${highlight("<file>")}] [-f ${highlight("<format>")}] [-g ${highlight("<graph id>")}]
+const usage = `  styx [-f ${highlight("<format>")}] [-g ${highlight("<graph id>")}] [-o ${highlight("<file>")}]
        [--minified-json] [--help]`;
 
 const formattedOutputFormats = supportedOutputFormats
@@ -22,9 +22,9 @@ const formattedOutputFormats = supportedOutputFormats
     .join(" or ");
 
 const argExplanations = `
-    -o, --output ${highlight("<file>")}       Path to the output file
     -f, --format ${highlight("<format>")}     Desired output format: ${formattedOutputFormats}
     -g, --graph ${highlight("<graph id>")}    ID of the control flow graph to export
+    -o, --output ${highlight("<file>")}       Path to the output file
 
     --minified-json           Minifies the serialized JSON string
 
