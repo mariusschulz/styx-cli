@@ -36,7 +36,7 @@ To export the control flow graph of the main program in DOT format, set `--forma
 $ styx input.js --format dot
 ```
 
-To export the control flow graph of a specific function in DOT format, provide the function ID via `--graph`:
+To export the control flow graph of a single function in DOT format, provide its ID via `--graph`:
 
 ```
 $ styx input.js --format dot --graph 1
