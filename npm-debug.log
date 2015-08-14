@@ -1,0 +1,91 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/Marius/.nvm/v0.10.38/bin/node',
+1 verbose cli   '/Users/Marius/.nvm/v0.10.38/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'styx@0.08' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.38
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'styx@0.08', null ]
+6 verbose cache add name=undefined spec="styx@0.08" args=["styx@0.08",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'styx@0.08',
+7 verbose parsed url   path: 'styx@0.08',
+7 verbose parsed url   href: 'styx@0.08' }
+8 verbose cache add name="styx" spec="0.08" args=["styx","0.08"]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: '0.08',
+9 verbose parsed url   path: '0.08',
+9 verbose parsed url   href: '0.08' }
+10 verbose addNamed [ 'styx', '0.08' ]
+11 verbose addNamed [ null, null ]
+12 silly lockFile d03ce97f-styx-0-08 styx@0.08
+13 verbose lock styx@0.08 /Users/Marius/.npm/d03ce97f-styx-0-08.lock
+14 silly addNameRange { name: 'styx', range: '>=0.8.0-0 <0.9.0-0', hasData: false }
+15 verbose request where is /styx
+16 verbose request registry https://registry.npmjs.org/
+17 verbose request id 08bfbc2d4fa67cfc
+18 verbose url raw /styx
+19 verbose url resolving [ 'https://registry.npmjs.org/', './styx' ]
+20 verbose url resolved https://registry.npmjs.org/styx
+21 verbose request where is https://registry.npmjs.org/styx
+22 info trying registry request attempt 1 at 16:18:27
+23 verbose etag "9EUXOY2WCJC4HQB1Q5H1ACA76"
+24 http GET https://registry.npmjs.org/styx
+25 http 304 https://registry.npmjs.org/styx
+26 silly registry.get cb [ 304,
+26 silly registry.get   { date: 'Fri, 14 Aug 2015 14:18:27 GMT',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     etag: '"9EUXOY2WCJC4HQB1Q5H1ACA76"',
+26 silly registry.get     age: '22',
+26 silly registry.get     connection: 'keep-alive',
+26 silly registry.get     'x-served-by': 'cache-fra1225-FRA',
+26 silly registry.get     'x-cache': 'HIT',
+26 silly registry.get     'x-cache-hits': '1',
+26 silly registry.get     'x-timer': 'S1439561907.315485,VS0,VE0',
+26 silly registry.get     vary: 'Accept' } ]
+27 verbose etag https://registry.npmjs.org/styx from cache
+28 silly addNameRange number 2 { name: 'styx', range: '>=0.8.0-0 <0.9.0-0', hasData: true }
+29 silly addNameRange versions [ 'styx',
+29 silly addNameRange   [ '0.0.1',
+29 silly addNameRange     '0.0.2',
+29 silly addNameRange     '0.0.3',
+29 silly addNameRange     '0.0.4',
+29 silly addNameRange     '0.0.5',
+29 silly addNameRange     '0.0.6',
+29 silly addNameRange     '0.0.7',
+29 silly addNameRange     '0.0.8' ] ]
+30 silly lockFile d03ce97f-styx-0-08 styx@0.08
+31 silly lockFile d03ce97f-styx-0-08 styx@0.08
+32 error notarget No compatible version found: styx@'>=0.8.0-0 <0.9.0-0'
+32 error notarget Valid install targets:
+32 error notarget ["0.0.1","0.0.2","0.0.3","0.0.4","0.0.5","0.0.6","0.0.7","0.0.8"]
+32 error notarget
+32 error notarget This is most likely not a problem with npm itself.
+32 error notarget In most cases you or one of your dependencies are requesting
+32 error notarget a package version that doesn't exist.
+33 error System Darwin 14.4.0
+34 error command "/Users/Marius/.nvm/v0.10.38/bin/node" "/Users/Marius/.nvm/v0.10.38/bin/npm" "install" "--save" "styx@0.08"
+35 error cwd /Users/Marius/Development/styx-cli
+36 error node -v v0.10.38
+37 error npm -v 1.4.28
+38 error code ETARGET
+39 verbose exit [ 1, true ]

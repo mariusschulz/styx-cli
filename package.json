@@ -1,6 +1,6 @@
 {
   "name": "styx-cli",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Provides a command-line interface for Styx, the JavaScript control flow graph derivation library.",
   "bin": {
     "styx": "./lib/index.js"
@@ -35,7 +35,7 @@
   "dependencies": {
     "chalk": "^1.1.0",
     "esprima": "^2.4.1",
-    "styx": "^0.0.4",
+    "styx": "0.0.8",
     "yargs": "^3.15.0"
   },
   "devDependencies": {
