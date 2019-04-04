@@ -1,17 +1,23 @@
 var gulp = require("gulp");
-var babel = require("gulp-babel");
+var gulpBabel = require("gulp-babel");
 
 var libDir = "./lib";
 
-gulp.task("babel", function() {
+function babel() {
   return gulp
-    .src("src/**.js")
-    .pipe(babel())
+    .src("src/**/*.js")
+    .pipe(
+      gulpBabel({
+        presets: ["@babel/preset-env"]
+      })
+    )
     .pipe(gulp.dest(libDir));
-});
+}
 
-gulp.task("babel-watch", ["babel"], function() {
-  gulp.watch("src/**.js", ["babel"]);
-});
+function babelWatch() {
+  gulp.watch("src/**.js", babel);
+}
 
-gulp.task("default", ["babel-watch"]);
+gulp.task("babel", babel);
+gulp.task("babel-watch", babelWatch);
+gulp.task("default", babelWatch);
