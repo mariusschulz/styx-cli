@@ -3166,10 +3166,10 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
 
-styx@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/styx/-/styx-0.2.0.tgz#6ba84b4c367dee7a465d28a5976cc05c7de5b2bc"
-  integrity sha512-rQHgSkXGUvu1tIVz7BYkyFP4GOVPqIdl+8dWH53VMf4n+xTQI56aTu1qmf/LWh3d5pSCyULmeGEsY/5d1b2KPQ==
+styx@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/styx/-/styx-0.2.1.tgz#6287c018daa2ea8546dfc44755099a630f548287"
+  integrity sha512-cHHgJSukbne6WnYfFJwI/MNBimUFUwgdYVwaFjRIDR11Jfst0VTYP5ZlscgqHQzwlAgnfC2jeBsFQGTb1xUbwg==
 
 supports-color@^5.3.0:
   version "5.5.0"

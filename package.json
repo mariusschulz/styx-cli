@@ -35,7 +35,7 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "esprima": "^4.0.1",
-    "styx": "^0.2.0",
+    "styx": "^0.2.1",
     "yargs": "^13.2.2"
   },
   "devDependencies": {
