@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import chalk from "chalk";
-import esprima from "esprima";
+import * as esprima from "esprima";
 import yargs from "yargs";
 import * as Styx from "styx";
 
