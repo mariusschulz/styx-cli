@@ -6,8 +6,7 @@ export default { show };
 const highlight = chalk.bold.green;
 const highlightSecondary = chalk.bold.yellow;
 
-const ASCII_ART_HEADER =
-`   ____  _
+const ASCII_ART_HEADER = `   ____  _
   / ___|| |_ _   ___  __
   \\___ \\| __| | | \\ \\/ /
    ___) | |_| |_| |>  <
@@ -16,19 +15,20 @@ const ASCII_ART_HEADER =
 `;
 
 const usageCommands = [
-    "-f " + highlight("<format>"),
-    "-g " + highlight("<graph id>"),
-    "-o " + highlight("<file>"),
-    "-m",
-    "--help"
+  "-f " + highlight("<format>"),
+  "-g " + highlight("<graph id>"),
+  "-o " + highlight("<file>"),
+  "-m",
+  "--help"
 ];
 
 const usage = "  $ styx " + usageCommands.map(surroundWithBrackets).join(" ");
 
 const formattedOutputFormats = supportedOutputFormats
-    .map(format => highlightSecondary(format))
-    .join(" or ");
+  .map(format => highlightSecondary(format))
+  .join(" or ");
 
+// prettier-ignore
 const argExplanations = `
     -f, --format ${highlight("<format>")}     Desired output format (${formattedOutputFormats})
     -g, --graph ${highlight("<graph id>")}    ID of the control flow graph to export (${highlightSecondary("dot")}-only)
@@ -38,11 +38,11 @@ const argExplanations = `
     --help                    Displays this help text`;
 
 function show() {
-    console.log(highlight(ASCII_ART_HEADER));
-    console.log(usage);
-    console.log(argExplanations);
+  console.log(highlight(ASCII_ART_HEADER));
+  console.log(usage);
+  console.log(argExplanations);
 }
 
 function surroundWithBrackets(value) {
-    return `[${value}]`;
+  return `[${value}]`;
 }
